@@ -122,4 +122,21 @@
   button {
     @apply cursor-pointer disabled:cursor-not-allowed;
   }
+
+  /* Responsive improvements */
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Better mobile touch targets */
+  @media (max-width: 768px) {
+    button {
+      @apply min-h-[44px] min-w-[44px];
+    }
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    @apply overflow-x-hidden;
+  }
 }

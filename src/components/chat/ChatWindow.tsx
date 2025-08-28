@@ -4,7 +4,7 @@ import { ModelResponse } from "./ModelResponse";
 
 export function ChatWindow({ data }: { data: ChatMessage[] | null }) {
   return (
-    <div className="w-full mx-auto max-w-4xl bg-background pb-4">
+    <div className="w-full mx-auto max-w-4xl bg-background pb-4 px-2 sm:px-0">
       {data &&
         data.length > 0 &&
         data.map((message, idx) => {

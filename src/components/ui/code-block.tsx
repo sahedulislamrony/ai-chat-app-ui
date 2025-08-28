@@ -72,13 +72,13 @@ function CodeBlockCode({
 
   return (
     <div className={classNames} {...props}>
-      <div className="flex items-center justify-between px-4 py-2.5 ">
+      <div className="flex items-center justify-between px-4 pr-0 py-0.5 sm:py-2.5 ">
         <span className="text-xs font-mono text-muted-foreground bg-muted/60 rounded px-2 py-0.5">
           {language}
         </span>
         <button
           onClick={handleCopy}
-          className="flex items-center gap-1 text-xs px-2 py-1 rounded bg-transparent  transition-colors  ml-2"
+          className="flex items-center gap-1 text-xs p-2 rounded justify-center transition-colors  mr-1.5"
         >
           {copied ? (
             <Check className="size-4 text-green-600" />
