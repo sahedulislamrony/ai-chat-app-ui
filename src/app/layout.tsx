@@ -34,6 +34,7 @@ export default function RootLayout({
     <html lang="en" suppressContentEditableWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        suppressContentEditableWarning
       >
         <ThemeProvider
           attribute="class"
