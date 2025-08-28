@@ -14,7 +14,7 @@ export function MainHomeLayout({ children }: MainHomeLayoutProps) {
 
   useEffect(() => {
     if (isMobile !== undefined) {
-      setIsOpen(false);
+      setIsOpen(!isMobile);
     }
   }, [isMobile]);
 
