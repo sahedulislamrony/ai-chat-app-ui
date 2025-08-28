@@ -2,7 +2,7 @@
 
 A modern, responsive chat interface built with Next.js that demonstrates emotion-aware conversations between users and AI assistants. This project showcases advanced React patterns, TypeScript implementation, and modern UI/UX design principles.
 
-## 🚀 Project Description
+## Project Description
 
 This application features an interactive chat interface that displays conversations with emotional context visualization. Each message includes emotion labels with confidence scores, providing insight into the emotional tone of the conversation. The interface includes a clean, modern design with dark/light theme support and responsive layout.
 
@@ -16,7 +16,7 @@ This application features an interactive chat interface that displays conversati
 - **Markdown Support**: Rich text rendering with react-markdown
 - **Theme Support**: Dark/light mode toggle capability
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed on your system:
 
@@ -24,7 +24,7 @@ Before you begin, ensure you have the following installed on your system:
 - **npm** (comes with Node.js) or **yarn** or **pnpm** or **bun**
 - **Git** (for cloning the repository)
 
-## 🛠️ Installation Instructions
+## Installation Instructions
 
 ### Step 1: Clone the Repository
 
@@ -65,7 +65,7 @@ bun install
 
 This project doesn't require any environment variables for basic functionality. All configurations are handled through the existing config files.
 
-## 🚀 Running the Project Locally
+## Running the Project Locally
 
 ### Development Mode
 
@@ -104,7 +104,7 @@ To run ESLint for code quality checks:
 npm run lint
 ```
 
-## 🧰 Technology Stack
+## Technology Stack
 
 ### Core Technologies
 
