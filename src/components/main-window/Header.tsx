@@ -3,8 +3,15 @@
 import { PanelRight, Sun, Moon } from "lucide-react";
 import { Button } from "../ui/button";
 import { useTheme } from "next-themes";
+import { cn } from "@/lib/utils";
 
-export function Header({ toggleSidebar }: { toggleSidebar: () => void }) {
+export function Header({
+  toggleSidebar,
+  isSidebarOpen,
+}: {
+  toggleSidebar: () => void;
+  isSidebarOpen?: boolean;
+}) {
   const { theme, setTheme } = useTheme();
   const isDarkMode = theme === "dark";
   const toggleTheme = () => {
@@ -12,7 +19,7 @@ export function Header({ toggleSidebar }: { toggleSidebar: () => void }) {
   };
 
   return (
-    <div className="border-b border-gray-200 dark:border-gray-700 bg-background px-4 py-3">
+    <header className="border-b border-gray-200 dark:border-gray-700 bg-background px-4 py-3">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-3">
           <Button
@@ -23,8 +30,16 @@ export function Header({ toggleSidebar }: { toggleSidebar: () => void }) {
           >
             <PanelRight className="w-5 h-5" />
           </Button>
-          <h1 className="text-lg font-semibold text-gray-900 dark:text-white">
-            ChatGPT
+          <h1
+            className={cn(
+              "text-lg font-semibold text-gray-900 dark:text-white  ",
+              {
+                hidden: isSidebarOpen,
+                block: !isSidebarOpen,
+              }
+            )}
+          >
+            SmartGPT
           </h1>
         </div>
         <Button
@@ -40,6 +55,6 @@ export function Header({ toggleSidebar }: { toggleSidebar: () => void }) {
           )}
         </Button>
       </div>
-    </div>
+    </header>
   );
 }

@@ -18,7 +18,7 @@ export function MainHomeLayout({ children }: { children: React.ReactNode }) {
 
       <div className="flex-1 flex flex-col bg-background">
         {/* header */}
-        <Header toggleSidebar={toggleSidebar} />
+        <Header toggleSidebar={toggleSidebar} isSidebarOpen={isOpen} />
         <main className="flex-1 overflow-hidden">{children}</main>
       </div>
     </div>
