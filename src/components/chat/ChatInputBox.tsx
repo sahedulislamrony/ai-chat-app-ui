@@ -26,38 +26,45 @@ export function ChatInputBox() {
     }
   };
   return (
-    <div className="w-full h-16  bg-background absolute bottom-3.5 left-0 border rounded-full border-gray-700 flex items-center px-4 shadow-md shadow-black/30 dark:shadow-gray-300/6">
-      <Button variant="ghost" className="text-gray-500 rounded-full">
-        <Plus className="text-gray-500 size-5" />
-      </Button>
-
-      <input
-        type="text"
-        disabled={isSending}
-        onKeyDown={handleKeyDown}
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        className="w-full h-full p-2 rounded-0 border-0 focus:ring-0 focus:outline-none font-semibold"
-        placeholder="Ask Anything..."
-      />
-      <div className="flex items-center justify-around gap-1">
+    <div className="w-full  max-w-4xl mx-auto ">
+      <div className="w-full  h-16 bg-transparent border rounded-full border-gray-700 flex items-center px-4 shadow-md shadow-black/30 dark:shadow-gray-300/6 mb-3">
         <Button variant="ghost" className="text-gray-500 rounded-full">
-          <AudioLines className="text-gray-500" />
+          <Plus className="text-gray-500 size-5" />
         </Button>
-        <Button
-          variant="ghost"
-          className="group text-gray-500 rounded-full "
-          disabled={isSending || !inputValue?.trim()}
-          onClick={handleSubmit}
-        >
-          {!isSending && (
-            <SendHorizontal className="h-5 w-5 -rotate-45 text-sky-400 group-disabled:text-gray-500" />
-          )}
-          {isSending && (
-            <LoaderCircle className="h-5 w-5 animate-spin group-disabled:text-gray-500" />
-          )}
-        </Button>
+
+        <input
+          type="text"
+          disabled={isSending}
+          onKeyDown={handleKeyDown}
+          spellCheck={false}
+          autoCapitalize="none"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          className="w-full h-full p-2 rounded-0 border-0 focus:ring-0 focus:outline-none font-semibold"
+          placeholder="Ask anything..."
+        />
+        <div className="flex items-center justify-around gap-1">
+          <Button variant="ghost" className="text-gray-500 rounded-full">
+            <AudioLines className="text-gray-500" />
+          </Button>
+          <Button
+            variant="ghost"
+            className="group text-gray-500 rounded-full "
+            disabled={isSending || !inputValue?.trim()}
+            onClick={handleSubmit}
+          >
+            {!isSending && (
+              <SendHorizontal className="size-5 -rotate-45 text-sky-400 group-disabled:text-gray-500" />
+            )}
+            {isSending && (
+              <LoaderCircle className="size-5 animate-spin group-disabled:text-gray-500" />
+            )}
+          </Button>
+        </div>
       </div>
+      <p className="text-xs text-center text-gray-500 pb-2">
+        GPT can make mistakes. Check important info.
+      </p>
     </div>
   );
 }

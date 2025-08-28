@@ -1,7 +1,18 @@
-export function ChatWindow() {
+import { ChatMessage } from "@/types/chat";
+import { UserMessage } from "./UserMessage";
+import { ModelResponse } from "./ModelResponse";
+
+export function ChatWindow({ data }: { data: ChatMessage[] | null }) {
   return (
-    <div className="w-full h-full overflow-y-auto bg-background">
-      Welcome to ChatGPT! How can I assist you today?
+    <div className="w-full mx-auto max-w-4xl bg-background pb-4">
+      {data &&
+        data.length > 0 &&
+        data.map((message, idx) => {
+          if (message.role === "user") {
+            return <UserMessage key={idx} {...message} />;
+          }
+          return <ModelResponse key={idx} {...message} />;
+        })}
     </div>
   );
 }
