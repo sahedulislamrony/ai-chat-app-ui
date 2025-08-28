@@ -219,7 +219,7 @@ To learn more about the technologies used in this project:
 **Sahedul Islam Rony**
 
 - GitHub: [@sahedulislamrony](https://github.com/sahedulislamrony)
-- Email: sahedulislamrony@gmail.com
+- Email: sahedul.dev@gmail.com
 - LinkedIn: [Sahedul Islam Rony](https://linkedin.com/in/sahedulislamrony)
 
 ---
