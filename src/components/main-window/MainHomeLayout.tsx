@@ -4,12 +4,13 @@ import { useState } from "react";
 import { Sidebar } from "./Sidebar";
 import { Header } from "./Header";
 
-export function MainLayoutHome({ children }: { children: React.ReactNode }) {
+export function MainHomeLayout({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
     setIsOpen((prev) => !prev);
   };
+
   return (
     <div className="h-screen flex">
       {/* sidebar */}
@@ -18,7 +19,7 @@ export function MainLayoutHome({ children }: { children: React.ReactNode }) {
       <div className="flex-1 flex flex-col bg-background">
         {/* header */}
         <Header toggleSidebar={toggleSidebar} />
-        <main className="flex-1 p-4">{children}</main>
+        <main className="flex-1 overflow-hidden">{children}</main>
       </div>
     </div>
   );
