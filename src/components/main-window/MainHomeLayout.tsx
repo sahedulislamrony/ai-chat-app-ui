@@ -1,11 +1,14 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Sidebar } from "./Sidebar";
-import { Header } from "./Header";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Header, Sidebar } from "@/components/main-window";
 
-export function MainHomeLayout({ children }: { children: React.ReactNode }) {
+interface MainHomeLayoutProps {
+  children: React.ReactNode;
+}
+
+export function MainHomeLayout({ children }: MainHomeLayoutProps) {
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -24,7 +27,7 @@ export function MainHomeLayout({ children }: { children: React.ReactNode }) {
       {/* mobile overlay */}
       {isMobile && isOpen && (
         <div
-          className="fixed inset-0 bg-black/50 z-40 lg:hidden"
+          className="fixed inset-0 bg-black/50 backdrop-blur-xl z-40 lg:hidden"
           onClick={() => setIsOpen(false)}
         />
       )}
@@ -37,7 +40,6 @@ export function MainHomeLayout({ children }: { children: React.ReactNode }) {
       />
 
       <div className="flex-1 flex flex-col bg-background min-w-0">
-        {/* Header */}
         <Header toggleSidebar={toggleSidebar} isSidebarOpen={isOpen} />
         <main className="flex-1 overflow-hidden">{children}</main>
       </div>

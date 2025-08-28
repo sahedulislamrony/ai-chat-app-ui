@@ -1,17 +1,16 @@
 "use client";
 
 import { PanelLeft, Sun, Moon } from "lucide-react";
-import { Button } from "../ui/button";
 import { useTheme } from "next-themes";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
-export function Header({
-  toggleSidebar,
-  isSidebarOpen,
-}: {
+interface HeaderProps {
   toggleSidebar: () => void;
   isSidebarOpen?: boolean;
-}) {
+}
+
+export function Header({ toggleSidebar, isSidebarOpen }: HeaderProps) {
   const { theme, setTheme } = useTheme();
   const isDarkMode = theme === "dark";
   const toggleTheme = () => {

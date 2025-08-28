@@ -1,9 +1,9 @@
-interface Emotion {
+export interface Emotion {
   label: string;
   confidence: number;
 }
 
-type Roles = "user" | "assistant";
+export type Roles = "user" | "assistant";
 
 export interface ChatMessage {
   id: string | number;

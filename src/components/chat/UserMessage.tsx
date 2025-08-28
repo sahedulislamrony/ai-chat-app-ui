@@ -1,15 +1,14 @@
 import { UserRound } from "lucide-react";
-import { Badge } from "../ui/badge";
 import { ChatMessage } from "@/types/chat";
-import { getEmotionColor } from "./EmotionLavelDesign";
+import { EmotionBadges } from "@/components/chat";
 
 type UserMessageProps = ChatMessage;
 
-export function UserMessage({ content, emotions }: UserMessageProps) {
+export function UserMessage({ role, content, emotions }: UserMessageProps) {
   return (
     <div className="w-full flex justify-start items-center flex-row-reverse mt-4 sm:mt-7">
       <div className="flex items-start flex-row-reverse max-w-full sm:max-w-3xl lg:max-w-4xl">
-        <div className=" rounded-full overflow-hidden w-4 h-4 sm:w-6 sm:h-6 mt-1 shrink-0 ml-0">
+        <div className=" rounded-full overflow-hidden w-4 h-4 sm:w-6 sm:h-6 mt-1 shrink-0 ml-1  ">
           <UserRound className="w-full h-full" />
         </div>
         <div className="h-full pr-0.5 md:pr-2 w-full min-w-0">
@@ -18,19 +17,7 @@ export function UserMessage({ content, emotions }: UserMessageProps) {
           </p>
 
           {/* Emotions */}
-          <div className="mt-2 flex flex-wrap gap-1 sm:gap-2 flex-row-reverse">
-            {emotions.map((emotion, index) => (
-              <Badge
-                key={index}
-                variant="secondary"
-                className={`text-xs px-2 py-1 rounded-full  ${getEmotionColor(
-                  emotion.label
-                )}`}
-              >
-                {emotion.label} {emotion.confidence}%
-              </Badge>
-            ))}
-          </div>
+          <EmotionBadges emotions={emotions} role={role} />
         </div>
       </div>
     </div>

@@ -56,5 +56,7 @@ const emotionData: Record<EmotionLabel, string> = {
 };
 
 export function getEmotionColor(label: string) {
-  return emotionData[label as EmotionLabel] || "";
+  if (!label) throw new Error("Label is required!");
+  if (!(label in emotionData)) return emotionData.Others;
+  return emotionData[label as EmotionLabel];
 }

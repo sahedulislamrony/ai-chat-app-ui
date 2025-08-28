@@ -1,9 +1,6 @@
 import { ChatMessage } from "@/types/chat";
-import { Badge } from "../ui/badge";
-import { Markdown } from "../ui/markdown";
-
-import { getEmotionColor } from "./EmotionLavelDesign";
-
+import { EmotionBadges } from "@/components/chat";
+import { Markdown } from "@/components/ui/markdown";
 type ModelResponseProps = ChatMessage;
 
 export function ModelResponse({ content, emotions }: ModelResponseProps) {
@@ -21,19 +18,7 @@ export function ModelResponse({ content, emotions }: ModelResponseProps) {
           </div>
 
           {/* Emotions */}
-          <div className="mt-0 ml-3 flex flex-wrap gap-1 sm:gap-2">
-            {emotions.map((emotion, index) => (
-              <Badge
-                key={index}
-                variant="secondary"
-                className={`text-xs px-2 py-1 rounded-full ${getEmotionColor(
-                  emotion.label
-                )}`}
-              >
-                {emotion.label} {emotion.confidence}%
-              </Badge>
-            ))}
-          </div>
+          <EmotionBadges emotions={emotions} role="assistant" />
         </div>
       </div>
     </div>
