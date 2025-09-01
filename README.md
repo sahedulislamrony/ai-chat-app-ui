@@ -1,4 +1,4 @@
-# Next.js Assessment - AI Chat Interface
+# AI Chat Interface
 
 A modern, responsive chat interface built with Next.js that demonstrates emotion-aware conversations between users and AI assistants. This project showcases advanced React patterns, TypeScript implementation, and modern UI/UX design principles.
 
